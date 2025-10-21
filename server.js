@@ -2,6 +2,8 @@ const express = require("express")
 const logger = require("morgan")
 const cors = require("cors")
 
+
+const commentCtrl =require("./routes/comments.js")
 const postCtrl = require('./routes/posts.js')
 
 const PORT = process.env.PORT || 3000
@@ -18,6 +20,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(logger("dev"))
 
+app.use("/comments", commentCtrl)
 
 app.use("/posts", postCtrl)
 
