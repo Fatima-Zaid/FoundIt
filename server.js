@@ -4,6 +4,8 @@ const cors = require("cors")
 
 
 const commentCtrl =require("./routes/comments.js")
+const postCtrl = require('./routes/posts.js')
+
 const PORT = process.env.PORT || 3000
 
 const db = require("./db")
@@ -19,6 +21,9 @@ app.use(express.urlencoded({ extended: false }))
 app.use(logger("dev"))
 
 app.use("/comments", commentCtrl)
+
+app.use("/posts", postCtrl)
+
 app.get("/", async (req, res) => {
   res.send("Hello")
 })
