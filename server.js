@@ -24,9 +24,6 @@ app.use("/comments", commentCtrl)
 
 app.use("/posts", postCtrl)
 
-app.get("/", async (req, res) => {
-  res.send("Hello")
-})
 
 app.listen(PORT, () => {
   console.log(`Running Server on Port ${PORT} . . . `)
