@@ -22,12 +22,12 @@ const postSchema = new Schema(
       required: true,
     },
     date: {
-      type: Date,
-      required: true,
+      type: String,
+      required: false,
     },
     time: {
-      type: Date,
-      default: Date.now,
+      type: String,
+      require:false
     },
   },
   { timestamps: true }
