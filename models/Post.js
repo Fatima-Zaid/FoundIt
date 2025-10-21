@@ -23,7 +23,7 @@ const postSchema = new Schema(
     },
     date: {
       type: Date,
-      required: false,
+      required: true,
     },
     time: {
       type: Date,
