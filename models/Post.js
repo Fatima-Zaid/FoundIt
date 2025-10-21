@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 
 const postSchema = new Schema(
   {
-    userId: {
+    username: {
       type: String,
       required: true,
     },
@@ -23,7 +23,7 @@ const postSchema = new Schema(
     },
     date: {
       type: Date,
-      required: true,
+      required: false,
     },
     time: {
       type: Date,
