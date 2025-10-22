@@ -2,7 +2,7 @@ const Post = require("../models/Post.js")
 
 exports.get_post = async (req, res) => {
   try {
-    const posts = await Post.find({})
+    const posts = await Post.find({}).populate('comments')
     res.status(200).send(posts)
   } catch (error) {
     res.status(500).send({ msg: "Error fetching posts!", error })

@@ -5,7 +5,14 @@ const Post =require("../models/Post")
 
 const CreateComment = async (req, res) => {
   try {
-    const comment = await Comment.create(req.body)
+    const { postId } = req.params
+    const comment = await Comment.create({ ...req.body, postId: postId })
+
+    await Post.findByIdAndUpdate(
+      postId,
+      { $push: { comments: comment._id } },
+      { new: true }
+    )
     res.status(200).send(comment)
   } catch (error) {
     throw error
