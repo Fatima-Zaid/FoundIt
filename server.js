@@ -10,8 +10,8 @@ const PORT = process.env.PORT || 3000
 
 const db = require("./db")
 
-const { Post } = require("./models/Post")
-const { Comment } = require("./models/Comment")
+// const { Post } = require("./models/Post")
+// const { Comment } = require("./models/Comment")
 
 const app = express()
 
