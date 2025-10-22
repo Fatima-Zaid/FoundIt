@@ -1,13 +1,7 @@
 const Comment = require("../models/Comment")
+const Post =require("../models/Post")
 
-const get_post = async (req, res) => {
-  try {
-    const posts = await Post.find({}).populate("comments") // ✅ Add populate
-    res.status(200).send(posts)
-  } catch (error) {
-    res.status(500).send({ msg: "Error fetching posts!", error })
-  }
-}
+
 
 const CreateComment = async (req, res) => {
   try {
@@ -29,5 +23,4 @@ const DeleteComment = async (req, res) => {
 module.exports = {
   CreateComment,
   DeleteComment,
-  get_post,
 }
